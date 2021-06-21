@@ -1,0 +1,22 @@
+{% extends 'books/base.html'%}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <h1 style="color: blue">Змінити дані про книгу</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <input type="submit" value="Обновити " >
+        </form>
+    <hr>
+    <hr>
+    <hr>
+{% endblock %}

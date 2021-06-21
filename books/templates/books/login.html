@@ -1,0 +1,21 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Аутентификуватися</button>
+    </form>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+{% endblock %}

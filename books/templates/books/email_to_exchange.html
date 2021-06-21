@@ -1,0 +1,24 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <h1>Відправте email власнику книги</h1>
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Надіслати зацікавення</button>
+        </form>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+
+{% endblock %}

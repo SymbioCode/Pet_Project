@@ -1,0 +1,50 @@
+
+{% extends 'books/base.html' %}
+{% load books_tags %}
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    {% show_three_first_books %}
+
+    <hr>
+    <hr>
+    <hr>
+    {% get_genres as genres %}
+    {% for genre in genres %}
+       <li><a href="{{ genre.get_absolute_url }}">{{ genre.name }}</a> </li>
+    {% endfor %}
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    {% for el in object_list %}
+    <ul>
+    {% if el.is_exchanged %}
+        <li style="color: red">Книгу обміняли </li>
+        <li>{{ el.name }} </li>
+    <li> {{ el.name_of_author }}</li>
+    <li>    <img width="100px" src="{{ el.book_cover.url }}" alt=""></li>
+        <br>
+    {% else %}
+  <li><a href="{{ el.get_for_put }}"> {{ el.name }}</a> </li>
+    <li> {{ el.name_of_author }}</li>
+    <li>    <img width="100px" src="{{ el.book_cover.url }}" alt=""></li>
+
+        {% if el.is_allowed_to_exchange %}
+            <li>Дозволена для обміну</li>
+            {% else %}
+            <li>Не дозволена для обміну</li>
+        {% endif %}
+{% endif %}
+        <br>
+        <br>
+</ul>
+    {% endfor %}
+{% endblock %}

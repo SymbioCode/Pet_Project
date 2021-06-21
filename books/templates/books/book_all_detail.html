@@ -1,0 +1,25 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <ul class="list-group">
+  <li class="list-group-item disabled" style="font-size: 30px">Власник книги  <span style="color: red;">{{ book.user}}</span></li>
+  <li class="list-group-item disabled">{{ book.name}}</li>
+  <li class="list-group-item">{{ book.name_of_author }}n</li>
+  <li class="list-group-item">{{ book.number_of_edition }}</li>
+  <li class="list-group-item">{{ book.year_of_edition }}c</li>
+  <li class="list-group-item">{{ book.count_of_pages }}</li>
+        <li class="list-group-item">{{ book.description }}</li>
+  <li class="list-group-item">{{ book.genre }}</li>
+    <button type="button" class="btn btn-danger"><a href="{{ book.get_newest_url }}">Запропонувати обмін</a> </button>
+
+
+</ul>
+    <hr>
+    <hr>
+    <hr>
+{% endblock %}

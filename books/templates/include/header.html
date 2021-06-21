@@ -1,0 +1,56 @@
+{% load static %}
+<header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+
+                        <a href="{% url 'index' %}" class="logo">
+                            <img src="{% static 'books/images/thumb2-creative-heart-pages-of-books-paper-love-of-reading-book.CwSx0.png'%}" align="klassy cafe html template">
+
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li id="my_style_1" class="scroll-to-section"><h1 style="color: green">BOOK
+                                BY BOOK</h1></li>
+                        <li><br></li>
+                        <li><br></li>
+                        <li><br></li>
+                        <li><br></li>
+                        <li><br></li>
+                            <li class="scroll-to-section"><a href="{% url 'index' %}" class="">Home</a></li>
+
+                            {% if not request.user.is_authenticated  %}
+                                <li class="scroll-to-section"><a href="{% url 'register' %}"><u style="color: red">Register</u></a></li>
+
+                            <li class="scroll-to-section"><a href="{% url 'login' %}"><u style="color: red">Login</u></a></li>
+                            {% endif %}
+                           {% if request.user.is_authenticated %}
+                            <li class="submenu">
+                                <a href="javascript:;">Опції</a>
+                                <ul>
+                                    <li><a href="{% url 'book-list-view' %}">Власні книги</a></li>
+                                    <li><a href="{% url 'book-create-view' %}">Добавити книгу</a></li>
+                                    <li><a href="{% url 'all-book-list-view' %}">Всі книги сайту</a></li>
+                                    <li><a href="{% url 'book-liked-me-view' %}">Інтересні мені книги</a></li>
+                                    <li><a href="{% url 'book-liked-list-view' %}">Хочуть обміняти</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li class="scroll-to-section"><a href="{% url 'logout' %}">Logout</a></li>
+                            {% endif %}
+                            <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
+                            <li class="scroll-to-section"><a href="#reservation"></a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>

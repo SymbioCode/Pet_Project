@@ -1,0 +1,27 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <li>{{ user_profile }} має такі книги для Вашого взаємного обміну</li>
+    <br>
+    <br>
+    {% for book in user_profile.book_set_up.all %}
+        {% if book.is_allowed_to_exchange %}
+
+      <li>{{ book.name }}</li>
+      <li>{{ book.name_of_author }}</li>
+        <li><img width="100px" src="{{ book.book_cover.url }}" alt=""> </li>
+            <button type="button" class="btn btn-danger"><a href="{{ book.get_upper_end }}">Зробити обмін</a> </button>
+            <br>
+            <br>
+{% endif %}
+    {% endfor %}
+
+{% endblock %}

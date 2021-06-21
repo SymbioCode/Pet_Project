@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Book by Book</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'books/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'books/css/font-awesome.css' %}">
+
+    <link rel="stylesheet" href="{% static 'books/css/templatemo-klassy-cafe.css' %}">
+
+    <link rel="stylesheet" href="{% static 'books/css/owl-carousel.css' %}">
+
+    <link rel="stylesheet" href="{% static 'books/css/lightbox.css' %}">
+
+    </head>
+
+<body>
+
+{% include 'include/header.html' %}
+
+{% include 'include/sidebar.html' %}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <img style="margin-left: 200px" src="{% static 'books/images/4976c8e26ff720f620d0f261ee8b6da7.jpg' %}" alt="First slide">
+
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+{% include 'include/footer.html' %}
+</body>
+</html>

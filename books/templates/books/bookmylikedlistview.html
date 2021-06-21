@@ -1,0 +1,23 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    {% for el in object_list %}
+        <br>
+        <h1>Ви цікавитеся такими книжками</h1>
+  <li><a href="{{ el.get_absolute_url }}"> {{ el.name }}</a> </li>
+    <li> {{ el.name_of_author }}</li>
+    <li>    <img width="100px" src="{{ el.book_cover.url }}" alt=""></li>
+        <br>
+        <br>
+        <br>
+
+    {% endfor %}
+{% endblock %}

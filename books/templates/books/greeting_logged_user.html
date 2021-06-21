@@ -1,0 +1,19 @@
+
+{% extends 'books/base.html' %}
+{% load static %}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <ul>
+    <li style=" font-size: 33px   "> Вітаю  <span style="color: green; font-size: 55px">{{ request.user}}</span>  на сайті поціновувачів книг і для подальшої роботи розділ Опції </li>
+
+    </ul>
+    <img style="margin-left: 500px" src="{% static 'books/images/загружено (9).jpg'  %}" alt="">
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    {% for genre in genres %}
+       <li><a href="{{ genre.get_absolute_url }}"> {{ genre }}</a> </li>
+    {% endfor %}
+    <hr>
+    <hr>
+    {% for book in object_list %}
+        <ul>
+        <li><a href="{{ book.get_new_url }}"> {{ book.name }}</a></li>
+        <li>{{ book.name_of_author}}</li>
+           <li> <img width="100px" src="{{ book.book_cover.url }}" alt=""></li>
+        <li>{{ book.description }}</li>
+
+            <br>
+            <br>
+        </ul>
+    {% endfor %}
+
+    <hr>
+  {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}">&lt;</a></li>
+    {% endif %}
+
+    {% for p in paginator.page_range %}
+        {% if page_obj.number == p %}
+            <li>{{ p }}</li>
+        {% elif  p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+            <li><a href="?page={{ p }}">{{ p }}</a></li>
+        {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}">&gt;</a></li>
+    {% endif %}
+
+
+
+{% endblock %}

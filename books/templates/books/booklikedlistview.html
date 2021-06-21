@@ -1,0 +1,30 @@
+{% extends 'books/base.html' %}
+
+{% block content %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    {% for el in object_list %}
+    <ul>
+    <li>Цією книжкою зацікавилися</li>
+        <br>
+        {% for user_liked in el.user_interested.all  %}
+        <li style="color: red"><a href="{% url 'user-profile-view' user_liked.id %}"> {{ user_liked}}</a> </li>
+            {% endfor %}
+
+
+
+        <br>
+  <li><a href="{{ el.get_absolute_url }}"> {{ el.name }}</a> </li>
+    <li> {{ el.name_of_author }}</li>
+    <li>    <img width="100px" src="{{ el.book_cover.url }}" alt=""></li>
+        <br>
+        <br>
+</ul>
+    {% endfor %}
+{% endblock %}
