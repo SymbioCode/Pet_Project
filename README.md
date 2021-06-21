@@ -4,11 +4,17 @@ Django 3.0
 To run project 
 
 Clone repo: git clone https://github.com/SymbioCode/Pet_Project.git 
+
 Enter to repo: cd django_book_by_book_1 
+
 Create virtual environment: virtualenv -p python3 venv.
+
 Activate virtual environment: source venv/bin/activate.
+
 Install requirements: pip3 install -r requirements.txt.
+
 Run migrations: python3 manage.py migrate.
+
 Run server: python3 manage.py runserver.
 
 
